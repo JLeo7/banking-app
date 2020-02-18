@@ -30,6 +30,8 @@ public class UserDTO {
 
     private int postalCode;
 
+    private String phoneNumber;
+
     private LocalDate birthDate;
 
     private int status;
@@ -53,6 +55,7 @@ public class UserDTO {
         this.idBackImageUrl = newUser.getIdBackImageUrl();
         this.firstAddress = newUser.getFirstAddress();
         this.secondAddress = newUser.getSecondAddress();
+        this.phoneNumber = newUser.getPhoneNumber();
         this.postalCode = newUser.getPostalCode();
         this.birthDate = newUser.getBirthDate();
         this.status = newUser.getStatus();
@@ -130,6 +133,14 @@ public class UserDTO {
 
     public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public LocalDate getBirthDate() {

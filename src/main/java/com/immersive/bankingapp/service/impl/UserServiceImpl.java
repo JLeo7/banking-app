@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(User newUser) {
         UserDTO userDTO = new UserDTO(newUser);
+        if (userDTO.getUserId() == 0) userDTO.setStatus(1);
         return new User(this.userDAO.save(userDTO));
     }
 

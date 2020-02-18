@@ -14,6 +14,7 @@ public class User {
     private String firstAddress;
     private String secondAddress;
     private int postalCode;
+    private String phoneNumber;
     private LocalDate birthDate;
     private int status;
     private String email;
@@ -33,6 +34,7 @@ public class User {
         this.firstAddress = userDTO.getFirstAddress();
         this.secondAddress = userDTO.getSecondAddress();
         this.postalCode = userDTO.getPostalCode();
+        this.phoneNumber = userDTO.getPhoneNumber();
         this.birthDate = userDTO.getBirthDate();
         this.status = userDTO.getStatus();
         this.email = userDTO.getEmail();
@@ -109,6 +111,14 @@ public class User {
 
     public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public LocalDate getBirthDate() {

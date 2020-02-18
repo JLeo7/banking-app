@@ -31,7 +31,7 @@ public class AccountDTO {
     private UserDTO owner;
 
     @OneToOne
-    @JoinColumn(name = "card_id", referencedColumnName = "card_id")
+    @JoinColumn(name = "card_id")
     private CardDTO card;
 
 //    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
