@@ -3,6 +3,7 @@ package com.immersive.bankingapp.dto;
 import com.immersive.bankingapp.model.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
