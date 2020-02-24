@@ -36,9 +36,9 @@ public class UserResource {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping("/sign-in")
-    public ResponseEntity<User> findById(@RequestBody User user) {
-        user = this.userService.findUserByEmailAndPassword(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
+//    @GetMapping("/{userId}")
+//    public ResponseEntity<User> findById(@PathVariable int userId, @RequestHeader("jwt") String jwt) {
+//        User user = this.userService.findUserById(userId);
+//        return new ResponseEntity<>(user, HttpStatus.OK);
+//    }
 }

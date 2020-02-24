@@ -8,6 +8,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.immersive.bankingapp.exception.ExceptionMessages;
 import org.springframework.stereotype.Component;
+import org.springframework.lang.Nullable;
 
 @Component
 public class JWTAuthHelper {
@@ -20,8 +21,9 @@ public class JWTAuthHelper {
         this.VERIFIER = JWT.require(this.ALGORITHM).withIssuer(this.ISSUER).build();
     }
 
-    public String createToken () throws JWTCreationException{
+    public String createToken (@Nullable String claimName, @Nullable String claimValue) throws JWTCreationException{
         try {
+
             return JWT.create().withIssuer(this.ISSUER).withClaim("username", "leo").sign(this.ALGORITHM);
         } catch (JWTCreationException rex) {
             throw new JWTCreationException(ExceptionMessages.JWT_CREATION.getExceptionMessage(), rex);

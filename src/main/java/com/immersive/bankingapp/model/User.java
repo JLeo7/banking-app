@@ -2,7 +2,7 @@ package com.immersive.bankingapp.model;
 
 import com.immersive.bankingapp.dto.UserDTO;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class User {
     private int userId;
@@ -15,10 +15,11 @@ public class User {
     private String secondAddress;
     private int postalCode;
     private String phoneNumber;
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
     private int status;
     private String email;
     private String password;
+    private String token;
 
     public User() {
 
@@ -121,11 +122,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -151,5 +152,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

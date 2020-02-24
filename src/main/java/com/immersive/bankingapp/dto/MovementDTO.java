@@ -20,7 +20,11 @@ public class MovementDTO {
 
     private float conversionFee;
 
-//    private AccountDTO originAccount;
-//
-//    private AccountDTO destinationAccount;
+    @ManyToOne
+    @JoinColumn(name = "origin_account")
+    private AccountDTO originAccount;
+
+    @ManyToOne
+    @JoinColumn(name = "destination_account")
+    private AccountDTO destinationAccount;
 }

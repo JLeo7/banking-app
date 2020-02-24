@@ -3,8 +3,7 @@ package com.immersive.bankingapp.dto;
 import com.immersive.bankingapp.model.User;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -33,16 +32,13 @@ public class UserDTO {
 
     private String phoneNumber;
 
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
 
     private int status;
 
     private String email;
 
     private String password;
-
-    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
-    private List<AccountDTO> accounts;
 
     public UserDTO() {
     }
@@ -144,11 +140,11 @@ public class UserDTO {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -174,13 +170,5 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<AccountDTO> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<AccountDTO> accounts) {
-        this.accounts = accounts;
     }
 }

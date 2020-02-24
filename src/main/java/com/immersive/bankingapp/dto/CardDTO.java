@@ -17,9 +17,6 @@ public class CardDTO {
 
     private int cvv;
 
-    @OneToOne(mappedBy = "card")
-    private AccountDTO account;
-
     public CardDTO() {
     }
 
@@ -61,14 +58,6 @@ public class CardDTO {
 
     public void setCvv(int cvv) {
         this.cvv = cvv;
-    }
-
-    public AccountDTO getAccount() {
-        return account;
-    }
-
-    public void setAccount(AccountDTO account) {
-        this.account = account;
     }
 }
 
