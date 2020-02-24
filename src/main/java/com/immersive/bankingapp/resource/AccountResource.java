@@ -37,7 +37,7 @@ public class AccountResource {
     }
 
     @GetMapping
-    public ResponseEntity<Account> findByNumber(@RequestParam(value = "number",required = true) int number) {
+    public ResponseEntity<Account> findByNumber(@RequestParam(value = "number") int number) {
         Account account = this.accountService.findByAccountNumber(number);
         return new ResponseEntity<>(account,HttpStatus.OK);
     }

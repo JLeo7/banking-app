@@ -49,6 +49,7 @@ public class AccountDTO {
         this.number = account.getNumber();
         this.type = account.getType();
         this.endDate = account.getEndDate();
+        this.owner = new UserDTO(account.getOwner());
     }
 
     public int getAccountId() {

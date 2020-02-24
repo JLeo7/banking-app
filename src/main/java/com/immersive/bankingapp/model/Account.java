@@ -14,6 +14,7 @@ public class Account {
     private int number;
     private int type;
     private LocalDate endDate;
+    private User owner;
 
     public Account() {
     }
@@ -28,6 +29,7 @@ public class Account {
         this.number = account.getNumber();
         this.type = account.getType();
         this.endDate = account.getEndDate();
+        this.owner = new User(account.getOwner());
     }
 
     public int getAccountId() {
@@ -100,5 +102,13 @@ public class Account {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

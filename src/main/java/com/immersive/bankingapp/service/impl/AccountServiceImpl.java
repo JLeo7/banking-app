@@ -21,7 +21,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account save(Account account) {
         AccountDTO accountDTO = new AccountDTO(account);
-        if (accountDTO.getAccountId() == 0) accountDTO.setStatus(1);
+        if (accountDTO.getAccountId() == 0) {
+            accountDTO.setStatus(1);
+            accountDTO.setBalance(0);
+            accountDTO.setNumber(1130209000 + (int) this.accountDAO.count());
+        };
         return new Account(this.accountDAO.save(accountDTO));
     }
 
