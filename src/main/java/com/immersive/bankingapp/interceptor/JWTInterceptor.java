@@ -16,9 +16,7 @@ public class JWTInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        Enumeration<String> names = request.getHeaderNames();
-        String jwt = request.getHeader("jwt");
-        String url = request.getRequestURI();
+        String jwt = request.getHeader("Authentication");
 //        jwtAuthHelper.validToken(jwt);
         return true;
     }

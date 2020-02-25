@@ -6,6 +6,7 @@ import com.immersive.bankingapp.model.Account;
 import com.immersive.bankingapp.service.AccountService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +26,8 @@ public class AccountServiceImpl implements AccountService {
             accountDTO.setStatus(1);
             accountDTO.setBalance(0);
             accountDTO.setNumber(1130209000 + (int) this.accountDAO.count());
+            accountDTO.setCreationDate(LocalDate.now());
+            if (accountDTO.getName().equals("")) account.setName(account.getNumber()+"");
         };
         return new Account(this.accountDAO.save(accountDTO));
     }
