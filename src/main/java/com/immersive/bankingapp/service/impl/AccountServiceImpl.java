@@ -27,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
             accountDTO.setBalance(0);
             accountDTO.setNumber(1130209000 + (int) this.accountDAO.count());
             accountDTO.setCreationDate(LocalDate.now());
-            if (accountDTO.getName().equals("")) account.setName(account.getNumber()+"");
+            if (accountDTO.getName().equals("")) accountDTO.setName(accountDTO.getNumber()+"");
         };
         return new Account(this.accountDAO.save(accountDTO));
     }

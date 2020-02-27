@@ -34,4 +34,10 @@ public class MovementResource {
         List<Movement> movementList = this.movementService.findAllMovementsByAccount(accountId);
         return new ResponseEntity<>(movementList,HttpStatus.OK);
     }
+
+    @GetMapping("/week/user/{userId}")
+    public ResponseEntity<List> findAllBetweenDate(@PathVariable int userId){
+        List<List<List<Movement>>> movements = this.movementService.findAllWeeklyMovementsByUser(userId);
+        return new ResponseEntity<>(movements, HttpStatus.OK);
+    }
 }

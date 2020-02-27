@@ -1,6 +1,5 @@
 package com.immersive.bankingapp.dto;
 
-import com.immersive.bankingapp.model.Account;
 import com.immersive.bankingapp.model.Movement;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ public class MovementDTO {
 
     private float amount;
 
-    private LocalDateTime datetime;
+    private LocalDateTime dateTime;
 
     private float conversionFee;
 
@@ -38,7 +37,7 @@ public class MovementDTO {
         this.movementId = movement.getMovementId();
         this.detail = movement.getDetail();
         this.amount = movement.getAmount();
-        this.datetime = movement.getDateTime();
+        this.dateTime = movement.getDateTime();
         this.conversionFee = movement.getConversionFee();
         this.status = movement.getStatus();
         this.originAccount = new AccountDTO(movement.getOriginAccount());
@@ -70,11 +69,11 @@ public class MovementDTO {
     }
 
     public LocalDateTime getDateTime() {
-        return datetime;
+        return dateTime;
     }
 
     public void setDateTime(LocalDateTime dateTime) {
-        this.datetime = dateTime;
+        this.dateTime = dateTime;
     }
 
     public float getConversionFee() {
